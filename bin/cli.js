@@ -6,23 +6,23 @@ var argv = require('optimist')
         .usage('Usage: $0 [metric, event, types] {OPTIONS}')
         .wrap(80)
         .option('expression', {
-          alias : 'e',
-          desc : 'Expression to be evaluated by Cube'
+          alias  : 'e',
+          desc   : 'Expression to be evaluated by Cube'
         })
         .option('host', {
-          alias : 'H',
-          desc : 'Cube evaluator host',
+          alias  : 'H',
+          desc   : 'Cube evaluator host',
           default: 'localhost:8081'
         })
         .option('request', {
-          alias : 'r',
-          desc : 'Ouput only the computed query',
-          default : false,
-          boolean : true
+          alias  : 'r',
+          desc   : 'Ouput only the computed query',
+          default: false,
+          boolean: true
         })
         .option('help', {
-          alias : 'h',
-          desc : 'Display this message'
+          alias  : 'h',
+          desc   : 'Display this message'
         })
         .check(function(argv) {
           if(argv.help) throw '';
