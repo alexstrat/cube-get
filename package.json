@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "request"   : "~2.9",
-    "optimist"  : "~0.3"
+    "optimist"  : "~0.3",
+    "date-utils": "~1.2"
     },
   "devDependencies": {}
 }
