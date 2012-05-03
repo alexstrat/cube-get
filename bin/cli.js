@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-cube2csv = require('../lib/cube2csv');
+cube2csv = require('../lib/index');
 
 var argv = require('optimist')
         .usage('Usage: $0 [metric, event, types] {OPTIONS}')
@@ -34,14 +34,14 @@ var argv = require('optimist')
 switch(argv._[0]) {
   case 'types':
     if(argv.request)
-      console.log(cube2csv.buildTypesQuery(argv.host));
+      console.log(cube2csv.types.buildQuery(argv.host));
     else
       cube2csv.types(argv.host, console.log);
     break;
 
   case 'event':
     break;
-    
+
   case 'metric':
     break;
 }
