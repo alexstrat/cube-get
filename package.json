@@ -1,0 +1,21 @@
+{
+  "author": "alexstrat",
+  "name": "cube2csv",
+  "description": "Utility command-line tool to rapidly fetch square/cube data and convert it to CSV",
+  "version": "0.0.0",
+  "homepage": "https://github.com/alexstrat/cube2csv",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexstrat/cube2csv.git"
+  },
+  "main": "lib/cube2csv.js",
+  "bin" : "bin/cli.js",
+  "engines": {
+    "node": ">=0.4.12"
+  },
+  "dependencies": {
+    "request"   : "~2.9",
+    "optimist"  : "~0.3"
+    },
+  "devDependencies": {}
+}
