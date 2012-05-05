@@ -1,4 +1,4 @@
-var cube2csv = require('../lib/cube2csv');
+var cube2csv = require('../lib');
 
 var myhost = require('./myhost');
 
