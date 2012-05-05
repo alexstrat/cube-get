@@ -1,4 +1,4 @@
-cube2csv
+cube-get
 ========
 
-Utility command-line tool to rapidly fetch square/cube data and covert it to CSV
+Utility command-line tool to rapidly and easily fetch data from square/cube evaluator.
