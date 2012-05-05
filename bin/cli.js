@@ -36,7 +36,9 @@ switch(argv._[0]) {
     if(argv.request)
       console.log(cube2csv.types.buildQuery(argv.host));
     else
-      cube2csv.types(argv.host, console.log);
+      cube2csv.types(argv.host, function(arr) {
+        console.log(arr instanceof Error ? arr: arr.join('\n'));
+      });
     break;
 
   case 'event':
