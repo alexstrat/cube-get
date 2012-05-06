@@ -17,15 +17,20 @@ var argv = require('optimist')
           alias  : 'S',
           desc   : 'Stop date of fetching. Can be a \'rendezvous\' expression'
         })
+        .option('over', {
+          alias  : 'o',
+          desc   : 'A \'rendezvous.duration\' expression. Time window over wich the event'+
+                   ' or metric will be fetched. The missing start or stop option will be '+
+                   'deduced from this'
+        })
         .option('limit', {
           alias  : 'l',
           desc   : 'Maximum number of value to fetch. Can be a \'rendezvous.duration\' '+
-                   'expression, if start or stop not defined : the missing option, or '+
-                   'limit itself, will be deduced'
+                   'expression, the numeric value will be deduced from \'step\''
         })
         .option('step', {
           alias  : 't',
-          desc   : 'Metric reolution exprimed as number or as \'rendezvous.duration\'. As '+
+          desc   : 'Metric resolution exprimed as number or as \'rendezvous.duration\'. As '+
                    'reminder, Cube supports 5 resolutions : 10s, 1m, 5m, 1h and 1d',
           default : '10s'
         })
