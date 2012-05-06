@@ -6,13 +6,13 @@ Command line output is by default exported as CSV format but you can use program
 
 ### Example
 
-Get the IPs of cube_request done today at 9:30 in the morning over 30 minutes :
+Get the IPs in `cube_request` done today at 9:30 in the morning over 30 minutes :
 
 ```bash
 $ cube-get event 'cube_request(ip)' --start today@9:30 --over 30m
 ```
 
-Get the number of request of last week week-end (7 days before) starting at 7:30 for each hours :
+Get the number of requests of last week's week-end (7 days before) starting at 7:30 for each hours :
 
 ```bash
 $ cube-get metric 'sum(cube_request)' --start today-7d@7:30 --over 2d --step 1h
@@ -67,6 +67,6 @@ Options:
   --help, -h        Display this message                                      
 ```
 
-### Warining
+### Warning
 
-Be carefull to corectly escaping your expressions..
+Be carefull to corectly escape your expressions..
