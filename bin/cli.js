@@ -82,7 +82,7 @@ switch(argv._[0]) {
       console.log(get.types.buildQuery(argv.host));
     else
       get.types(argv.host, function(arr) {
-        return arr instanceof Error ? console.error(arr): console.log(arr);
+        return arr instanceof Error ? console.error(arr): console.log(arr.join('\n'));
       });
     break;
 
