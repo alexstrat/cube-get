@@ -4,7 +4,13 @@ Leverages [rendezvous](https://github.com/alexstrat/node-rendezvous) expressions
 
 Command line output is by default exported as CSV format but you can use programaticaly the API.
 
-### Example
+#### Installation
+
+```bash
+$ npm install -g cube-get
+```
+
+### Examples
 
 Get the IPs in `cube_request` done today at 9:30 in the morning over 30 minutes :
 
