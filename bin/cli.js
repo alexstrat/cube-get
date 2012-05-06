@@ -21,16 +21,27 @@ var argv = require('optimist')
           alias  : 'l',
           desc   : 'Maximum number of value to fetch. Can be a \'rendezvous.duration\' '+
                    'expression, if start or stop not defined : the missing option, or '+
-                   'limit, will be deduced'
+                   'limit itself, will be deduced'
+        })
+        .option('step', {
+          alias  : 't',
+          desc   : 'Metric reolution exprimed as number or as \'rendezvous.duration\'. As '+
+                   'reminder, Cube supports 5 resolutions : 10s, 1m, 5m, 1h and 1d',
+          default : '10s'
         })
         .option('format', {
           alias  : 'f',
           desc   : 'Output format : pure json or csv',
           default: 'csv'
         })
+        .option('json', {
+          desc   : 'Shortcut for output format in pure json',
+          boolean: true,
+          default: false
+        })
         .option('inverse', {
           alias  : 'i',
-          desc   : 'inverse date format in csv : mm/dd/yy to dd/mm/yy',
+          desc   : 'Inverse date format in csv : mm/dd/yy to dd/mm/yy',
           boolean: true,
           default: false
         })
@@ -41,7 +52,7 @@ var argv = require('optimist')
         })
         .option('request', {
           alias  : 'r',
-          desc   : 'Only ouput the computed request without execute it',
+          desc   : 'Only ouput the computed request without executing it',
           default: false,
           boolean: true
         })
@@ -55,6 +66,8 @@ var argv = require('optimist')
             throw 'Specify \'types\', \'metric\' or \'event\'' ;
           if(argv._[1])
             argv.expression = argv._[1];
+          if(argv.json)
+            argv.format = 'json';
         })
         .argv;
 
@@ -64,7 +77,7 @@ switch(argv._[0]) {
       console.log(get.types.buildQuery(argv.host));
     else
       get.types(argv.host, function(arr) {
-        console.log(arr instanceof Error ? arr: arr.join('\n'));
+        return arr instanceof Error ? console.error(arr): console.log(arr);
       });
     break;
 
@@ -73,10 +86,16 @@ switch(argv._[0]) {
       console.log(get.event.buildQuery(argv.expression, argv).replace(/%3A/g, ':'));
     else
       get.event(argv.expression, argv, function(arr) {
-        console.log(arr instanceof Error ? arr: arr);
+        return arr instanceof Error ? console.error(arr): console.log(arr);
       });
       break;
 
   case 'metric':
+    if(argv.request)
+      console.log(get.metric.buildQuery(argv.expression, argv).replace(/%3A/g, ':'));
+    else
+      get.metric(argv.expression, argv, function(arr) {
+        return arr instanceof Error ? console.error(arr): console.log(arr);
+      });
     break;
 }
