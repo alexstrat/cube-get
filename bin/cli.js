@@ -53,7 +53,7 @@ var argv = require('optimist')
         .option('host', {
           alias  : 'H',
           desc   : 'Cube evaluator host',
-          default: 'localhost:8081'
+          default: 'localhost:1081'
         })
         .option('request', {
           alias  : 'r',
