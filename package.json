@@ -2,7 +2,7 @@
   "author": "alexstrat",
   "name": "cube-get",
   "description": "Utility command-line tool to rapidly and easily fetch data from square/cube evaluator",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "homepage": "https://github.com/alexstrat/cube-get",
   "repository": {
     "type": "git",
