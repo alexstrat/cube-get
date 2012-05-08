@@ -65,7 +65,7 @@ Options:
   --inverse, -i     Inverse date format in csv : mm/dd/yy to dd/mm/yy
                                                      [boolean]  [default: false]
 
-  --host, -H        Cube evaluator host              [default: "localhost:8081"]
+  --host, -H        Cube evaluator host              [default: "localhost:1081"]
 
   --request, -r     Only ouput the computed request without executing it
                                                      [boolean]  [default: false]
