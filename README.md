@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/alexstrat/cube-get.png)](http://travis-ci.org/alexstrat/cube-get)
 Utility command-line tool to rapidly and easily fetch data from [square/cube](http://square.github.com/cube) evaluator.
 
 Leverages [rendezvous](https://github.com/alexstrat/node-rendezvous) expressions to rapidly select what data in the time you need.
