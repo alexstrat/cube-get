@@ -75,4 +75,4 @@ Options:
 
 ### Warning
 
-Be carefull to corectly escape your expressions..
+Be carefull to correctly escape your expressions.
